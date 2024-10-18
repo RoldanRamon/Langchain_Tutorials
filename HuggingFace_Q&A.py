@@ -9,8 +9,9 @@ load_dotenv()
 api_token = os.getenv("HUGGINGFACE_API_KEY")
 
 llm = HuggingFaceEndpoint(
-    repo_id='HuggingFaceH4/zephyr-7b-beta',
+     repo_id='HuggingFaceH4/zephyr-7b-beta',
     # repo_id='tiiuae/falcon-7b-instruct',
+    # repo_id='nvidia/Llama-3.1-Nemotron-70B-Instruct-HF',
     huggingfacehub_api_token=api_token
 )
 
