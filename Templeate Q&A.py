@@ -19,7 +19,7 @@ learning_prompt = PromptTemplate(
 
 time_prompt = PromptTemplate(
     input_variables=["learning_plan"],
-    template="I only have one week. Can you create a plan to help me hit this goal: {learning_plan}."
+    template="I only have one week. Can you create a plan to help me hit this goal: {learning_plan}. Tell me in portuguese of Brazil."
 )
 
 llm = ChatOpenAI(model="gpt-4o-mini", api_key=api_token)
@@ -31,4 +31,4 @@ seq_chain = ({"activity": learning_prompt | llm | StrOutputParser()}
     | StrOutputParser())
 
 # Call the chain
-print(seq_chain.invoke({"activity": "comer carne"}))
+print(seq_chain.invoke({"activity": "Comprar carne para churrasco"}))
